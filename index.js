@@ -34,15 +34,33 @@ const mungedWeatherArray = ((array) => array.map((weatherObj) => {
 }));
 
 app.get('/location', (request, response) => {
-  const firstLocationData = mungedData(data);
+  try {
+    const firstLocationData = mungedData(data);
 
-  response.json(firstLocationData);
+    response.json(firstLocationData);
+  } catch (e) {
+    console.error(e);
+
+    response.json({
+      status: 500,
+      responseText: 'Sorry something went wrong!',
+    });
+  }
 });
 
 app.get('/weather', (req, resp) => {
-  const weatherArray = mungedWeatherArray(weatherData.data);
+  try {
+    const weatherArray = mungedWeatherArray(weatherData.data);
 
-  resp.json(weatherArray);
+    resp.json(weatherArray);
+  } catch (e) {
+    console.error(e);
+
+    resp.json({
+      status: 500,
+      responseText: 'Sorry something went wrong!',
+    });
+  }
 });
 
 const PORT = process.env.PORT || 3001;
