@@ -25,15 +25,13 @@ const mungedData = ((array) => {
   return locationObject;
 });
 
-const mungedWeatherArray = ((array) => {
-  return array.map((weatherObj) => {
-    const newObject = {
-      description: weatherObj.weather.description,
-      time: weatherObj.datetime,
-    };
-    return newObject;
-  });
-});
+const mungedWeatherArray = ((array) => array.map((weatherObj) => {
+  const newObject = {
+    forecast: weatherObj.weather.description,
+    time: weatherObj.datetime,
+  };
+  return newObject;
+}));
 
 app.get('/location', (request, response) => {
   const firstLocationData = mungedData(data);
