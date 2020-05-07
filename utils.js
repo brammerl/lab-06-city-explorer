@@ -30,7 +30,7 @@ function weatherMung(array) {
 
 const getLocation = async(city) => {
   try {
-    const data = await request.get(`GET https://us1.locationiq.com/v1/search.php?key=08a9cb83f9842c&q=${city}&format=json`);
+    const data = await request.get(`GET https://us1.locationiq.com/v1/search.php?key=${process.env.LOCATION_KEY}&q=${city}&format=json`);
     
     return JSON.parse(data.text)[0];
   } catch(e) {
