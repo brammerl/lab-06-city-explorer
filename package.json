@@ -1,33 +1,32 @@
 {
-  "name": "q",
+  "name": "city-explorer-back-end",
   "version": "1.0.0",
-  "description": "* test",
+  "description": "",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "start": "node index.js",
+    "test": "qunit test/tests.js",
+    "test:watch": "qunit test/tests.js --watch",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bpagador/lab-06-city-explorer.git"
+    "url": "git+https://github.com/dpcairns/city-explorer-back-end.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bpagador/lab-06-city-explorer/issues"
+    "url": "https://github.com/dpcairns/city-explorer-back-end/issues"
   },
-  "homepage": "https://github.com/bpagador/lab-06-city-explorer#readme",
+  "homepage": "https://github.com/dpcairns/city-explorer-back-end#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "nodemon": "^2.0.3"
+    "express": "^4.17.1",
+    "qunit": "^2.10.0",
+    "superagent": "^5.2.2"
   }
 }
